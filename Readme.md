@@ -1,3 +1,3 @@
 #Weather App in node js
 
-<img src="screenshot.png">
+![ScreenShot](https://github.com/prajapati-arjun/weatherappnodejs/blob/main/ScreenShot.png?raw=true)
