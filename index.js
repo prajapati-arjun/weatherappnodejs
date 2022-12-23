@@ -41,5 +41,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(8000,"127.0.0.1");
+server.listen(8000,()=>{
+    console.log(`The server is running at port 8000 and the url is 127.0.0.1:8000`);
+});
 
