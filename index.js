@@ -3,11 +3,11 @@ const fs = require('fs');
 var requests = require("requests");
 
 const homeFile = fs.readFileSync("home.html", "utf-8")
-
+// C = K - 273.15
 const replaceVal = (tempVal,orgVal)=>{
-    let temperature = tempVal.replace("{%tempval%}",orgVal.main.temp);
-     temperature = temperature.replace("{%tempmin%}",orgVal.main.temp_min);
-     temperature = temperature.replace("{%tempmax%}",orgVal.main.temp_max);
+    let temperature = tempVal.replace("{%tempval%}",parseFloat(orgVal.main.temp-273.15).toFixed(2));
+     temperature = temperature.replace("{%tempmin%}",parseFloat(orgVal.main.temp_min-273.15).toFixed(2));
+     temperature = temperature.replace("{%tempmax%}",parseFloat(orgVal.main.temp_max-273.15).toFixed(2));
      temperature = temperature.replace("{%location%}",orgVal.name);
      temperature = temperature.replace("{%country%}",orgVal.sys.country);
      temperature = temperature.replace("{%tempstatus%}",orgVal.weather[0].main);
